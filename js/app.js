@@ -46,3 +46,63 @@ var fearGenerated = function(numPeeps, rainInInches, numSharks) {
 };
 
 var fear = fearGenerated(people, rain, sharks);
+
+//------------------------------------//
+//--1.4 DISPLAYING FUNCTION CONTENTS--//
+//------------------------------------//
+
+/* Periodically, the devs at the Haunted Hickory House need to be reminded of their formula. They would like to view the contents of the function, rather than executing it.
+
+Write one line of code to alert the contents of the variable that stores the function to the screen. Here is the fearGenerated function expression assignment for reference:
+
+var fearGenerated = function(numPeeps, rainInInches, numSharks) {
+  var rainFear = numPeeps * rainInInches;
+  var sharkFear = numSharks * numSharks * numSharks;
+  var totalFear = sharkFear + rainFear;
+  return totalFear;
+}; */
+
+
+alert(fearGenerated);
+
+//-----------------------------------------//
+//--               1.5                   --//
+//--      FUNCTIONS AS PARAMETERS,       --//
+//--    ARGUMENTS AND RETURN VALUES      --//
+//-----------------------------------------//
+
+/* Well, it stands to reason that some people might not want to experience the Haunted Hickory House if the fear is significantly elevated on that day.
+
+Inside the fearMessage function expression, use conditional statements (e.g., if, else if) to check the integer value of the fear variable, assigned on line 1, and decide whether its value is LOW or MEDIUM.
+
+For each fear range below we want to display a confirmation message with the corresponding message. We can return a call to the confirm function that has a single string argument containing the correct message.
+
+For fear levels less than 200 (i.e., fear < 200):
+
+Fear Level: LOW
+Still wanna ride?
+For fear levels from 200 through 300 inclusive (i.e., fear >= 200 && fear <= 300):
+
+Fear Level: MEDIUM
+Think you'll make it?
+Note: You do not need to change the existing code that’s provided for you in the challenge editor.
+
+Use the hints as you get stuck! <--pfft NO WAY  */
+
+var fear = fearGenerated(numPeeps, rainInInches, numSharks);
+
+var fearMessage = function() {
+  if(fear < 200){
+     return confirm("Fear Level: LOW \n 							 Still wanna ride?");
+  } else if (fear >=200 && fear <= 300) {
+    return confirm("Fear Level: MEDIUM \n 						Think you'll make it?");
+  }
+
+};
+
+function confirmRide(confirmToGo) {
+  return confirmToGo();
+}
+
+// Call confirmRide with the fearMessage function
+var startRide = confirmRide(fearMessage);
