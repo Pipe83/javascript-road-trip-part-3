@@ -147,3 +147,45 @@ var modifiedNames = [ "Thomas Meeks",
                       "Dan McGaw" ];
 
 modifiedNames.map(function (arrayCell) {alert("Yo, " + arrayCell);});
+
+//---------------------------------//
+//--1.9 EXPRESSIONS INSIDE ARRAYS--//
+//---------------------------------//
+
+/* The folks over at Poplar Puzzlers need an
+array of functions for one of their puzzles.
+They’ve requested your help in making the array,
+which they would like to be called puzzlers.
+The cells of the array should each contain a function,
+and these functions–well, what they return–are
+listed here in order. Each function has one parameter.
+
+Note input below represents the parameter,
+and you will need to convert the math formulas to JavaScript:
+
+Returns 3 * input - 8
+Returns (input + 2)3
+Returns input2 - 9
+Returns input % 4
+Use your knowledge of arrays and anonymous function expressions to build this array of functions.
+
+Note: Use parentheses with your return statements if you’re having trouble with the order of operations. */
+
+var puzzlers = [
+  function (input) {
+    return 3 * input - 8;
+  },
+
+  function (input) {
+  	return (input + 2) * (input + 2) * (input + 2);
+  },
+
+  function (input) {
+		return (input * input) - 9;
+  },
+
+  function (input) {
+  	return input % 4;
+  }
+
+];
