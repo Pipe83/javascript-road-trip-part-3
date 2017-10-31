@@ -238,3 +238,64 @@ function adventureSelector(userChoice) {
   }
 
 }
+
+//---------------------------------------//
+//--1.12 IMMEDIATELY-INVOKED ADVENTURE!--//
+//---------------------------------------//
+
+/* Write one line of code that calls adventureSelector, passes it 3 as an argument, and that immediately invokes the function that gets returned. Here’s adventureSelector for your reference:
+
+function adventureSelector(userChoice) {
+  if (userChoice == 1) {
+    return function() {
+      alert("You selected the Vines of Doom!");
+    };
+  } else if (userChoice == 2) {
+    return function() {
+      alert("Looks like you want the Lake of Despair!");
+    };
+  } else if (userChoice == 3) {
+    return function() {
+      alert("The Caves of Catastrophe!");
+    };
+  }
+} */
+
+adventureSelector(3)();
+
+
+
+
+
+//----------------------//
+//--1.13 QUEUE BUILDER--//
+//----------------------//
+
+/* The devs at Poplar Puzzles would like you to treat an array of functions like a Queue, passing the result of each function into the next until the Queue is empty. They’ve sent you the puzzlers Queue of functions, and the following instructions:
+
+Build a function and assign it to a variable named applyAndEmpty.
+The function should take in an input number and a queue of functions as parameters.
+Using a for loop, call the functions in the queue in order with the input number, where the results of each function becomes the next function’s input.
+Once done this loop, return from applyAndEmpty the final function’s result. Additionally, the queue should be empty at this point.
+Lastly, call the applyAndEmpty function using the provided start variable and the puzzlers Queue as arguments, and alert the result. */
+
+
+var puzzlers = [
+  function(a) { return 8 * a - 10; },
+  function(a) { return (a - 3) * (a - 3) * (a - 3); },
+  function(a) { return a * a + 4; },
+  function(a) { return a % 5; }
+];
+var start = 2;
+
+// build applyAndEmpty function expression here
+
+var applyAndEmpty = function (input, queue) {
+  var length = queue.length;
+  for(var i = 0 ; i < length; i ++) {
+			input =  queue.shift()(input);
+  }
+	return input;
+};
+
+alert(applyAndEmpty(start, puzzlers));
