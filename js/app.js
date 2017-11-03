@@ -513,3 +513,35 @@ var snowYetiAlert      = warningMaker("snow yeti");
 // call the two functions here
 killerPenguinAlert(6, "Ice Caves");
 snowYetiAlert(1, "Blizzard Beach");
+
+
+
+//---------------------------------//
+//--2.10 CHANGING A BOUND VALUE I--//
+//---------------------------------//
+
+/* The Cold Closures Cove devs are troubled by the amount of the warnings that have been coming back lately. Some obstacles have resulted in many warnings, while others have not.
+
+They’d like you modify the warningMaker function to internally count the number of times a particular warning has been issued.
+
+In order to accomplish this, you’ll need to set up a count variable and figure out how to increment it appropriately within the context of your functions.
+
+Lastly, add that count to the alert message. The format of the message should match the following:
+
+Beware! There have been <obstacle> sightings in the Cove today!
+<number> have been spotted at the <location>!
+This is alert #<count> today for <obstacle> danger. */
+
+function warningMaker(obstacle) {
+  var count = 0;
+  return function(number, location) {
+    count ++;
+    alert("Beware! There have been " + obstacle +
+          " sightings in the Cove today!\n" +
+          number + " have been spotted at the " +
+          location + "!\n" +
+          // finish the warning message here
+          "This is alert #" + count + " today for " + obstacle + " danger."
+    );
+  };
+}
