@@ -747,3 +747,39 @@ function thisIsWeird() {
 } */
 
 console.log("unused2");
+
+//-------------------------------//
+//--3.3 ANALYZING LOAD ORDER II--//
+//-------------------------------//
+
+/* As you progress through The Hoisting Hills, you reach a thin stone bridge where a cluster of Wizard-Devs declare that YOU SHALL NOT PASS.
+
+In order to continue, you must rewrite theBridgeOfHoistingDoom. Reorder the statements as they would be interpreted by a JavaScript interpreter, with the following rules for evaluation:
+
+For all variable declarations, put the corresponding declarations at the top of the function. Assign them a value of undefined and maintain their order.
+Now that variable declarations have been placed at the top, remove the original declarations, but leave any associated assignments.
+Then, hoist all function declarations to immediately after your variable declarations, maintaining their order as well.
+Function declarations that end up being overwritten by other functions with the same name should be removed from their current place in the load order.
+Any function declarations that end up replacing other functions, however, will not take the place of the previous version, and instead will just fall into the load order behind existing functions.
+Remove any unreachable statements after the first return statement. */
+
+function theBridgeOfHoistingDoom() {
+  var ring = undefined;
+  var power = undefined;
+
+  function balrog() {
+    return "whip";
+  }
+  function wizard() {
+    return "white";
+  }
+
+  function elf() {
+    return "immortal";
+  }
+
+  ring = wizard;
+  wizard = balrog;
+  return wizard();
+
+}
