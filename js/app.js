@@ -849,3 +849,63 @@ function theBridgeOfHoistingDoom() {
 } */
 
 console.log("ERROR");
+
+//--------------------------//
+//--4.2 BUILDING OBJECTS I--//
+//--------------------------//
+
+/*The developers at the Ocean of Objects need help creating data structures for the three different ranger vehicles they use to battle pirates on the Ocean.
+
+Here are the vehicles listed in order of type, passenger capacity, and storedAt location.
+
+Motorboat, 6, Ammunition Depot
+Jet Ski, 1, Reef Dock
+Submarine, 8, Underwater Outpost
+In the order listed, build three object literals with the names vehicle1, vehicle2, and vehicle3.
+
+Within each object literal, create properties for type, capacity, and storedAt, and use the same order provided above. Make sure to store numbers as number values, and text as string values. */
+
+var vehicle1 = {type: "Motorboat", capacity: 6, storedAt: "Ammunition Depot"};
+var vehicle2 = {type: "Jet Ski", capacity: 1, storedAt: "Reef Dock"};
+var vehicle3 = {type: "Submarine", capacity: 8, storedAt: "Underwater Outpost"};
+
+//---------------------------//
+//--4.3 ACCESSING OBJECTS I--//
+//---------------------------//
+
+/* One of the ranger-devs wants to check how many rangers can go to battle the pirates using the Motorboat vehicle.
+
+Using one line of code, access the correct property value (with dot notation), and log the amount of rangers that can join the fun to the console. */
+
+console.log(vehicle1.capacity);
+
+//----------------------------//
+//--4.4 ACCESSING OBJECTS II--//
+//----------------------------//
+
+/* Excellent, the vehicle data structures are ready!
+
+Now the ranger-devs have asked you to build a findVehicle function that will accept a vehicle name and list of vehicle objects, and return the current storage location of the requested vehicle.
+
+Put all the vehicle objects in a vehicles array. Use the array literal syntax and pass in each of the vehicle variable names.
+Build a function expression assigned to a findVehicle variable, which accepts name and list parameters for the name of the individual vehicle sought and the full array of vehicles.
+Inside the findVehicle function, use a for loop to loop through all of the vehicles.
+if the type of the current object in the list matches the name parameter, then return the current object’s storedAt location.
+Call the findVehicle function and pass in the correct arguments to find the storage location of the "Submarine". */
+
+// create vehicles array
+var vehicles = [{type: "Motorboat", capacity: 6, storedAt: "Ammunition Depot"}, {type: "Jet Ski", capacity: 1, storedAt: "Reef Dock"}, {type: "Submarine", capacity: 8, storedAt: "Underwater Outpost"}];
+
+// build findVehicle function expression
+var findVehicle = function (name, list) {
+  for(var i = 0; i < vehicles.length; i++) {
+    if(vehicles[i].type === name) {
+        return vehicles[i].storedAt;
+
+   }
+
+ }
+};
+
+// call findVehicle
+findVehicle("Submarine", vehicles);
