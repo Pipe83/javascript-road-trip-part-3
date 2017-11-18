@@ -976,3 +976,341 @@ vehicle3.submersible = true;
 vehicle3["# of weapons"] = 8;
 vehicle2["# of weapons"] = 4;
 vehicle1["# of weapons"] = 1;
+
+//🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨//
+
+//--------------------//
+//--4.7 BLINDERS ON!--//
+//--------------------//
+
+/* The ranger-devs want to upgrade Lighthouse Rock with new super-blinding light bulbs and remove the old existing bulbs.
+
+The new superBlinders array and lighthouseRock object are provided. Each index of the superBlinders array contains a bulb name and its wattage within a sub-array.
+
+Completely remove the existing bulbs property from the lighthouseRock object.
+Add a weaponBulbs property to lighthouseRock and assign the superBlinders array as a value.
+Log the name value of the bulb with the highest wattage to the console. Use the correct index from the weaponBulbs property of the lighthouseRock object to access the correct name value.
+Note: You do not need to change the provided code for the superBlinders array or the lighthouseRock object. */
+
+
+/* var superBlinders = [
+  ["Firelight", 4000],
+  ["Solar Death Ray", 6000],
+  ["Supernova", 12000]
+];
+
+var lighthouseRock = {
+  gateClosed: true,
+  bulbs: [200, 500, 750],
+  capacity: 30,
+  secretPassageTo: "Underwater Outpost"
+};
+
+// remove bulbs property from lighthouseRock
+
+
+// add weaponBulbs property to lighthouseRock
+ */
+
+ //---------------------------------//
+ //--4.8 TO THE LIGHTHOUSE, QUICK!--//
+ //---------------------------------//
+
+ /* PIRATES AHOY! It’s time for the ranger-devs to get over to the Lighthouse and throw down! Our lighthouseRock object now has a new numRangers property to track how many rangers are fighting at the Lighthouse.
+
+Your goal is to complete the addRanger function that takes in location, name, skillz, and station as parameters. Then we can pass in our lighthouseRock object as the location and start to add rangers.
+
+As rangers are added, increment the number of rangers at the location using its numRangers property.
+Add a property to the location using bracket notation that will be used to hold a ranger object. Specifically, each property will be named ranger1, ranger2, ranger3, etc. This will require string concatenation and the current value of the numRangers property.
+Now that you have your ranger<number> property, assign an object literal to it that contains properties for name, skillz, and station. Then assign values to those properties using the parameters that we pass in.
+Call your addRanger function three times with the appropriate arguments to add the following rangers, in order, to the location:
+name: "Nick Walsh", skillz: "magnification burn", station: 2
+name: "Drew Barontini", skillz: "uppercut launch", station: 3
+name: "Christine Wong", skillz: "bomb defusing", station: 1 */
+
+/* var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
+
+var lighthouseRock = {
+  gateClosed: true,
+  weaponBulbs: superBlinders,
+  capacity: 30,
+  secretPassageTo: "Underwater Outpost",
+  numRangers: 0
+};
+
+function addRanger(location, name, skillz, station) {
+  // increment the number of rangers property
+
+  // add the ranger<number> property and assign a ranger object
+
+
+}
+
+// call addRanger three times to add the new rangers */
+
+//-------------------------------//
+//--4.9 MAN YOUR BULB STATIONS!--//
+//-------------------------------//
+
+/*  We need to assign each of the ranger-devs to a super-blinding light bulb based on their station number. So we’re building a function that creates an alert message for the ranger-devs in the following format:
+
+Avast, me hearties!
+There be Pirates nearby! Stations!
+<name>, man the <superblinder>!
+<name>, man the <superblinder>!
+<name>, man the <superblinder>!
+We’ve created a dontPanic function for you that already contains the alert message. Your job is to finish building the list string:
+
+Create a for loop to loop through all of the rangers at the location, using the numRangers property to keep track.
+Inside the loop, begin by using the correct property to append the name of the current ranger to the list.
+Also, concatenate the text between the ranger name and the superblinder so that it matches the format above.
+Lastly, add the name of the correct super-blinding light bulb from the weaponBulbs array to the list. In order to retrieve the name of the correct bulb, you’ll need to use the ranger’s station number.  */
+
+/* var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
+
+var lighthouseRock = {
+  gateClosed: true,
+  weaponBulbs: superBlinders,
+  capacity: 30,
+  secretPassageTo: "Underwater Outpost",
+  numRangers: 3,
+  ranger1: {name: "Nick Walsh", skillz: "magnification burn", station: 2},
+  ranger2: {name: "Drew Barontini", skillz: "uppercut launch", station: 3},
+  ranger3: {name: "Christine Wong", skillz: "bomb defusing", station: 1}
+};
+
+function dontPanic(location) {
+  var list = "Avast, me hearties!\n" +
+             "There be Pirates nearby! Stations!\n";
+
+  // loop through the rangers and append to list
+
+
+  alert(list);
+}
+
+dontPanic(lighthouseRock); */
+
+/****🚨!!WATCH VIDEO 4.10!!🚨****/
+
+//----------------------------------//
+//--4.11 FUNCTIONS AS PROPERTIES I--//
+//----------------------------------//
+
+/* To improve organization and memory efficiency, the ranger-devs have asked you to make all functions that add objects to objects part of the destination location instead of being present in the global scope.
+
+Take the addRanger function from below and add it directly within the lighthouseRock object. The property name should still be addRanger.
+Refactor the addRanger method to use this instead of location.
+function addRanger(location, name, skillz, station) {
+  location.numRangers++;
+  location["ranger" + location.numRangers] = {
+    name: name,
+    skillz: skillz,
+    station: station
+  };
+} */
+
+/* var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
+
+var lighthouseRock = {
+  gateClosed: true,
+  weaponBulbs: superBlinders,
+  capacity: 30,
+  secretPassageTo: "Underwater Outpost",
+  numRangers: 3,
+  ranger1: {name: "Nick Walsh", skillz: "magnification burn", station: 2},
+  ranger2: {name: "Drew Barontini", skillz: "uppercut launch", station: 3},
+  ranger3: {name: "Christine Wong", skillz: "bomb defusing", station: 1},
+
+
+}; */
+
+//--------------------------------------//
+//--4.12 CALLING FUNCTION PROPERTIES I--//
+//--------------------------------------//
+
+/* The pirates are really rough today! Add a new ranger to the lighthouseRock object by calling your addRanger method with the following information:
+
+name: "Jordan Wade"
+skillz: "dual-wield hand crossbow"
+station: 4 */
+
+/* var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
+
+var lighthouseRock = {
+  gateClosed: true,
+  weaponBulbs: superBlinders,
+  capacity: 30,
+  secretPassageTo: "Underwater Outpost",
+  numRangers: 3,
+  ranger1: {name: "Nick Walsh", skillz: "magnification burn", station: 2},
+  ranger2: {name: "Drew Barontini", skillz: "uppercut launch", station: 3},
+  ranger3: {name: "Christine Wong", skillz: "bomb defusing", station: 1},
+  addRanger: function (name, skillz, station){
+    this.numRangers++;
+    this["ranger" + this.numRangers] = {
+      name: name,
+      skillz: skillz,
+      station: station
+    };
+  }
+};
+
+// call the addRanger method on lighthouseRock
+ */
+
+ //-----------------------------------//
+ //--4.13 FUNCTIONS AS PROPERTIES II--//
+ //-----------------------------------//
+
+/* It looks like ranger4 has a station assignment at Lighthouse Rock, but now there aren’t enough super-blinding bulbs for everyone.
+
+The ranger-devs want you to build a new function property for lighthouseRock that adds a new super-blinding bulb to the weaponBulbs array, complete with a name and insane wattage.
+
+Create a new addBulb function property for the lighthouseRock object, but don’t add it directly inside the object. Instead, add it on the outside of the lighthouseRock object.
+Pass in name and wattage as parameters.
+Push any new bulb to the weaponBulbs array. Notice how the data is arranged and indexed in the superBlinders array. That means we’re going to need to push a sub-array with the name and wattage.
+Code School
+ */
+
+
+/* var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
+
+var lighthouseRock = {
+  gateClosed: true,
+  weaponBulbs: superBlinders,
+  capacity: 30,
+  secretPassageTo: "Underwater Outpost",
+  numRangers: 3,
+  ranger1: {name: "Nick Walsh", skillz: "magnification burn", station: 2},
+  ranger2: {name: "Drew Barontini", skillz: "uppercut launch", station: 3},
+  ranger3: {name: "Christine Wong", skillz: "bomb defusing", station: 1},
+  ranger4: {name: "Jordan Wade", skillz: "dual-wield hand crossbow", station: 4},
+  addRanger: function(name, skillz, station) {
+    this.numRangers++;
+    this["ranger" + this.numRangers] = {
+      name: name,
+      skillz: skillz,
+      station: station
+    };
+  }
+};
+
+// create addBulb function property here
+ */
+
+ //---------------------------------------//
+ //--4.14 CALLING FUNCTION PROPERTIES II--//
+ //---------------------------------------//
+
+/* A new shipment of super-blinding bulbs just came in!
+
+Use the addBulb function to add these three new bulbs to the list of super-blinders available at Lighthouse Rock.
+
+name: "Blasterbright"
+wattage: 5000
+
+name: "Sight Slayer"
+wattage: 1800
+
+name: "Burner of Souls"
+wattage: 7500 */
+
+
+/* lighthouseRock.addBulb = function(name, wattage) {
+  this.weaponBulbs.push([name, wattage]);
+};
+
+// call addBulb and pass in the correct arguments */
+
+
+/****🚨!!WATCH VIDEO 4.16!!🚨****/
+
+
+ //----------------------//
+ //--4.17 ENUMERATION I--//
+ //----------------------//
+
+/* The devs at Lighthouse Rock have received a shipment of spearguns for use in the battle against the pirates, and they need to know which spearguns have arrived.
+
+Build a function called listGuns that accepts a guns object as a parameter.
+Inside that function, use a for in loop to loop through each speargun in the guns object.
+Log each speargun in to the console.
+After your function is built, call listGuns and pass in the rockSpearguns object. */
+
+/* var rockSpearguns = {
+  Sharpshooter: {barbs: 2, weight: 10, heft: "overhand"},
+  Pokepistol: {barbs: 4, weight: 8, heft: "shoulder"},
+  Javelinjet: {barbs: 4, weight: 12, heft: "waist"},
+  Firefork: {barbs: 6, weight: 8, heft: "overhand"},
+  "The Impaler": {barbs: 1, weight: 30, heft: "chest"}
+};
+
+// build listGuns
+
+
+// call listGuns and pass in rockSpearguns */
+
+
+//-----------------------//
+//--4.18 ENUMERATION II--//
+//-----------------------//
+
+/* We’ve got our list of spearguns, but the problem is that the ranger-devs need to know what heft property each speargun has in order to know which one is right for their individual aiming styles.
+
+Modify the log message in your listGuns function so that it follows the format below. You’ll need to use bracket notation strategically to access the heft property for the current speargun in guns.
+
+Behold! <speargun name>, with <heft style> heft!
+Note: You only need to change the console message for this challenge, and you do not need to change any of the other provided code. */
+
+/* var rockSpearguns = {
+  Sharpshooter: {barbs: 2, weight: 10, heft: "overhand"},
+  Pokepistol: {barbs: 4, weight: 8, heft: "shoulder"},
+  Javelinjet: {barbs: 4, weight: 12, heft: "waist"},
+  Firefork: {barbs: 6, weight: 8, heft: "overhand"},
+  "The Impaler": {barbs: 1, weight: 30, heft: "chest"}
+};
+
+function listGuns(guns) {
+  for (var speargun in guns) {
+    // modify the log message here
+    console.log(speargun);
+  }
+}
+
+listGuns(rockSpearguns);
+ */
+
+
+ //------------------------//
+ //--4.19 ENUMERATION III--//
+ //------------------------//
+
+/* The ranger-devs liked your listGuns function so much that they want it added to the rockSpearguns object.
+
+Rather than moving it directly inside the object, use bracket notation to convert the function into a "listGuns" property on the rockSpearguns object.
+Since the rockSpearguns object will now contain more than just spearguns, change all instances of your enumeration reference word to property instead of speargun.
+And since we’re working from within the function now, we no longer need to pass in guns as a parameter. Remove it so that we’re not passing any parameters, and then replace any other instance of guns with this.
+In order to ensure that only spearguns get printed in the console message, add a conditional inside the for loop to make sure that the message only gets logged if this[property]["heft"] does not equal an undefined value.
+Lastly, change the function call at the bottom to use bracket notation along with parentheses to call the function on the rockSpearguns object.
+Note: Use bracket notation throughout this challenge. No dot notation allowed! */
+
+
+/* var rockSpearguns = {
+  Sharpshooter: {barbs: 2, weight: 10, heft: "overhand"},
+  Pokepistol: {barbs: 4, weight: 8, heft: "shoulder"},
+  Javelinjet: {barbs: 4, weight: 12, heft: "waist"},
+  Firefork: {barbs: 6, weight: 8, heft: "overhand"},
+  "The Impaler": {barbs: 1, weight: 30, heft: "chest"}
+};
+
+// convert listGuns function
+function listGuns(guns) {
+  for (var speargun in guns) {
+    console.log("Behold! " + speargun + ", with " +
+                guns[speargun]["heft"] + " heft!");
+  }
+}
+
+// call listGuns using bracket notation on rockSpearguns
+listGuns(rockSpearguns); */
