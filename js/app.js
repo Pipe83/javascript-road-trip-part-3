@@ -1174,6 +1174,7 @@ var lighthouseRock = {
 
 // call the addRanger method on lighthouseRock
  */
+ lighthouseRock.addRanger("Jordan Wade", "dual-wield hand crossbow", 4);
 
  //-----------------------------------//
  //--4.13 FUNCTIONS AS PROPERTIES II--//
