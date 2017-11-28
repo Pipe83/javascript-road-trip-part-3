@@ -1031,7 +1031,7 @@ name: "Nick Walsh", skillz: "magnification burn", station: 2
 name: "Drew Barontini", skillz: "uppercut launch", station: 3
 name: "Christine Wong", skillz: "bomb defusing", station: 1 */
 
-/* var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
+var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
 
 var lighthouseRock = {
   gateClosed: true,
@@ -1043,13 +1043,16 @@ var lighthouseRock = {
 
 function addRanger(location, name, skillz, station) {
   // increment the number of rangers property
-
+  location.numRangers++;
   // add the ranger<number> property and assign a ranger object
-
+  location["ranger" + location.numRangers] = {name: name, skillz: skillz, station: station};
 
 }
 
-// call addRanger three times to add the new rangers */
+// call addRanger three times to add the new rangers
+addRanger(lighthouseRock, "Nick Walsh", "maginifcation burn", 2);
+addRanger(lighthouseRock, "Drew Barontini", "uppercut launch", 3);
+addRanger(lighthouseRock, "Christine Wong", "bomb defusing", 1);
 
 //-------------------------------//
 //--4.9 MAN YOUR BULB STATIONS!--//
@@ -1069,7 +1072,7 @@ Inside the loop, begin by using the correct property to append the name of the c
 Also, concatenate the text between the ranger name and the superblinder so that it matches the format above.
 Lastly, add the name of the correct super-blinding light bulb from the weaponBulbs array to the list. In order to retrieve the name of the correct bulb, you’ll need to use the ranger’s station number.  */
 
-/* var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
+var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
 
 var lighthouseRock = {
   gateClosed: true,
@@ -1086,13 +1089,20 @@ function dontPanic(location) {
   var list = "Avast, me hearties!\n" +
              "There be Pirates nearby! Stations!\n";
 
-  // loop through the rangers and append to list
+ // loop through the rangers and append to list
+  for(var i = 1; i <= location.numRangers; i ++){
+    var ranger = location["ranger" + i];
+    var name = ranger.name;
+    var superblinder = location.weaponBulbs[ranger.station - 1][0];
 
+   list += name + ", man the " + superblinder + "!\n";
 
-  alert(list);
+ }
+
+ alert(list);
 }
 
-dontPanic(lighthouseRock); */
+dontPanic(lighthouseRock);
 
 /****🚨!!WATCH VIDEO 4.10!!🚨****/
 
