@@ -993,7 +993,7 @@ Log the name value of the bulb with the highest wattage to the console. Use the 
 Note: You do not need to change the provided code for the superBlinders array or the lighthouseRock object. */
 
 
-/* var superBlinders = [
+var superBlinders = [
   ["Firelight", 4000],
   ["Solar Death Ray", 6000],
   ["Supernova", 12000]
@@ -1007,10 +1007,13 @@ var lighthouseRock = {
 };
 
 // remove bulbs property from lighthouseRock
-
+delete lighthouseRock.bulbs;
 
 // add weaponBulbs property to lighthouseRock
- */
+lighthouseRock.weaponBulbs = superBlinders;
+
+// log the correct weaponBulbs array value to the console
+console.log(lighthouseRock.weaponBulbs[2][0]);
 
  //---------------------------------//
  //--4.8 TO THE LIGHTHOUSE, QUICK!--//
