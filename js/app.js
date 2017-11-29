@@ -1191,30 +1191,34 @@ Code School
  */
 
 
-/* var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
 
-var lighthouseRock = {
-  gateClosed: true,
-  weaponBulbs: superBlinders,
-  capacity: 30,
-  secretPassageTo: "Underwater Outpost",
-  numRangers: 3,
-  ranger1: {name: "Nick Walsh", skillz: "magnification burn", station: 2},
-  ranger2: {name: "Drew Barontini", skillz: "uppercut launch", station: 3},
-  ranger3: {name: "Christine Wong", skillz: "bomb defusing", station: 1},
-  ranger4: {name: "Jordan Wade", skillz: "dual-wield hand crossbow", station: 4},
-  addRanger: function(name, skillz, station) {
-    this.numRangers++;
-    this["ranger" + this.numRangers] = {
-      name: name,
-      skillz: skillz,
-      station: station
-    };
-  }
-};
+ var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
 
-// create addBulb function property here
- */
+ var lighthouseRock = {
+   gateClosed: true,
+   weaponBulbs: superBlinders,
+   capacity: 30,
+   secretPassageTo: "Underwater Outpost",
+   numRangers: 3,
+   ranger1: {name: "Nick Walsh", skillz: "magnification burn", station: 2},
+   ranger2: {name: "Drew Barontini", skillz: "uppercut launch", station: 3},
+   ranger3: {name: "Christine Wong", skillz: "bomb defusing", station: 1},
+   ranger4: {name: "Jordan Wade", skillz: "dual-wield hand crossbow", station: 4},
+   addRanger: function(name, skillz, station) {
+     this.numRangers++;
+     this["ranger" + this.numRangers] = {
+       name: name,
+       skillz: skillz,
+       station: station
+     };
+   }
+ };
+
+ // create addBulb function property here
+ lighthouseRock.addBulb = function(name, wattage){
+ 	this.weaponBulbs.push([name, wattage]);
+ };
+
 
  //---------------------------------------//
  //--4.14 CALLING FUNCTION PROPERTIES II--//
@@ -1233,33 +1237,14 @@ wattage: 1800
 name: "Burner of Souls"
 wattage: 7500 */
 
-
-var superBlinders = [ ["Firestorm", 4000], ["Solar Death Ray", 6000], ["Supernova", 12000] ];
-
-var lighthouseRock = {
-  gateClosed: true,
-  weaponBulbs: superBlinders,
-  capacity: 30,
-  secretPassageTo: "Underwater Outpost",
-  numRangers: 3,
-  ranger1: {name: "Nick Walsh", skillz: "magnification burn", station: 2},
-  ranger2: {name: "Drew Barontini", skillz: "uppercut launch", station: 3},
-  ranger3: {name: "Christine Wong", skillz: "bomb defusing", station: 1},
-  ranger4: {name: "Jordan Wade", skillz: "dual-wield hand crossbow", station: 4},
-  addRanger: function(name, skillz, station) {
-    this.numRangers++;
-    this["ranger" + this.numRangers] = {
-      name: name,
-      skillz: skillz,
-      station: station
-    };
-  }
+lighthouseRock.addBulb = function(name, wattage) {
+  this.weaponBulbs.push([name, wattage]);
 };
 
-// create addBulb function property here
-lighthouseRock.addBulb = function(name, wattage){
-	this.weaponBulbs.push([name, wattage]);
-};
+// call addBulb and pass in the correct arguments
+lighthouseRock.addBulb("Blasterbright", 5000);
+lighthouseRock.addBulb("Sight Slayer", 1800);
+lighthouseRock.addBulb("Burner of Souls", 7500);
 
 
 /****🚨!!WATCH VIDEO 4.16!!🚨****/
@@ -1276,14 +1261,7 @@ Inside that function, use a for in loop to loop through each speargun in the gun
 Log each speargun in to the console.
 After your function is built, call listGuns and pass in the rockSpearguns object. */
 
-lighthouseRock.addBulb = function(name, wattage) {
-  this.weaponBulbs.push([name, wattage]);
-};
 
-// call addBulb and pass in the correct arguments
-lighthouseRock.addBulb("Blasterbright", 5000);
-lighthouseRock.addBulb("Sight Slayer", 1800);
-lighthouseRock.addBulb("Burner of Souls", 7500);
 
 
 //-----------------------//
