@@ -1259,7 +1259,7 @@ var lighthouseRock = {
 // create addBulb function property here
 lighthouseRock.addBulb = function(name, wattage){
 	this.weaponBulbs.push([name, wattage]);
-
+};
 
 
 /****🚨!!WATCH VIDEO 4.16!!🚨****/
@@ -1276,18 +1276,14 @@ Inside that function, use a for in loop to loop through each speargun in the gun
 Log each speargun in to the console.
 After your function is built, call listGuns and pass in the rockSpearguns object. */
 
-/* var rockSpearguns = {
-  Sharpshooter: {barbs: 2, weight: 10, heft: "overhand"},
-  Pokepistol: {barbs: 4, weight: 8, heft: "shoulder"},
-  Javelinjet: {barbs: 4, weight: 12, heft: "waist"},
-  Firefork: {barbs: 6, weight: 8, heft: "overhand"},
-  "The Impaler": {barbs: 1, weight: 30, heft: "chest"}
+lighthouseRock.addBulb = function(name, wattage) {
+  this.weaponBulbs.push([name, wattage]);
 };
 
-// build listGuns
-
-
-// call listGuns and pass in rockSpearguns */
+// call addBulb and pass in the correct arguments
+lighthouseRock.addBulb("Blasterbright", 5000);
+lighthouseRock.addBulb("Sight Slayer", 1800);
+lighthouseRock.addBulb("Burner of Souls", 7500);
 
 
 //-----------------------//
